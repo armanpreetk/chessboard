@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chessboard</title>
+</head>
+<body>
+
+<script>
+    // User story 1: Function to print data to the document
+    function print(data) {
+        let label = document.createElement("span");
+        label.innerHTML = data;
+        document.body.appendChild(label);
+    }
+
+    // User story 2: Function to create a new line in the document
+    function newLine() {
+        let breakElement = document.createElement("br");
+        document.body.appendChild(breakElement);
+    }
+
+    // User story 3: Declare board size
+    let board_size = 8;
+
+    // User story 4: Create the chessboard grid
+    for (let i = 0; i < board_size; i++) {
+        for (let j = 0; j < board_size; j++) {
+            // Check if the sum of the row and column is even or odd
+            if ((i + j) % 2 === 0) {
+                print("* ");
+            } else {
+                print("# ");
+            }
+        }
+        newLine(); // Move to the next line after completing one row
+    }
+</script>
+
+</body>
+</html>
